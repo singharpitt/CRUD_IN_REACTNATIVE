@@ -22,14 +22,14 @@ const RegisterScreen = ({ navigation }) => {
 
     try {
       // Check if email is already registered
-      const checkResponse = await axios.post('http://192.168.130.84:3000/check-email', { email });
+      const checkResponse = await axios.post('https://crud-in-reactnative.onrender.com/check-email', { email });
       if (checkResponse.data.exists) {
         Alert.alert('Email Already Registered', 'This email address is already registered.');
         return;
       }
 
       // If email is valid and not registered previously, proceed with registration
-      const response = await axios.post('http://192.168.130.84:3000/signup', { email, password });
+      const response = await axios.post('https://crud-in-reactnative.onrender.com/signup', { email, password });
       console.log(response.data); // You may handle the response as needed
       navigation.navigate('Login'); // Redirect to login after successful registration
     } catch (error) {

@@ -13,7 +13,7 @@ const LoginScreen = ({ navigation }) => {
   const handleLogin = async () => {
     try {
         handleCheckEmail()
-      const response = await axios.post('http://192.168.130.84:3000/signin', { email, password });
+      const response = await axios.post('https://crud-in-reactnative.onrender.com/signin', { email, password });
       console.log(response.data); // You may handle the response as needed
       navigation.navigate('Home');
     } catch (error) {
@@ -25,7 +25,7 @@ const LoginScreen = ({ navigation }) => {
   const handleCheckEmail = async () => {
     try {
       // Check if email is already registered
-      const checkResponse = await axios.post('http://192.168.130.84:3000/check-email', { email });
+      const checkResponse = await axios.post('https://crud-in-reactnative.onrender.com/check-email', { email });
       if (checkResponse.data.exists) {
         
       } else {

@@ -59,7 +59,7 @@ router.post('/check-email', async (req, res) => {
 router.post('/add-details', tokenget, async (req, res) => {
     const { email,mobilenumber, name, age } = req.body;
     const userId = req.user._id; // Authenticated admin ID from tokenget middleware
-
+    console.log(req.body)
     try {
         const userdetail = new Userdetail({ name,email,mobilenumber, age, belongsto: userId });
         await userdetail.save();

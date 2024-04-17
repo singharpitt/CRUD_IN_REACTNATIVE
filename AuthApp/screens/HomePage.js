@@ -29,7 +29,7 @@ const HomePage = ({ navigation }) => {
   const fetchUserDetails = async () => {
     try {
         const token = await AsyncStorage.getItem('token');
-        const response = await axios.get('http://192.168.130.84:3000/show-details', {
+        const response = await axios.get('https://crud-in-reactnative.onrender.com/show-details', {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -53,7 +53,7 @@ const HomePage = ({ navigation }) => {
   const handleAddData = async () => {
     try {
         const token = await AsyncStorage.getItem('token');
-        await axios.post('http://192.168.130.84:3000/add-details', newUserData, {
+        await axios.post('https://crud-in-reactnative.onrender.com/add-details', newUserData, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -77,7 +77,7 @@ const HomePage = ({ navigation }) => {
   const handleUpdateData = async () => {
     try {
         const token = await AsyncStorage.getItem('token');
-        await axios.put(`http://192.168.130.84:3000/modify-details/${selectedUserId}`, newUserData, {
+        await axios.put(`https://crud-in-reactnative.onrender.com/modify-details/${selectedUserId}`, newUserData, {
             headers: {
                 Authorization: `Bearer ${token}`
             }
@@ -101,7 +101,7 @@ const HomePage = ({ navigation }) => {
   const handleDeleteData = async (userId) => {
     try {
         const token = await AsyncStorage.getItem('token');
-        await axios.delete(`http://192.168.130.84:3000/delete-details/${userId}`, {
+        await axios.delete(`https://crud-in-reactnative.onrender.com/delete-details/${userId}`, {
             headers: {
                 Authorization: `Bearer ${token}`
             }

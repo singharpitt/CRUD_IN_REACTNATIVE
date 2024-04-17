@@ -15,7 +15,6 @@ const requireAuth = require('./middleware/tokenget');
 const routes = require('./routes/route_assign');
 const tokenget = require('./middleware/tokenget');
 app.use(bodyParser.json());
-app.use(routes);
 
 
 mongoose.connection.on('connected', () => {
@@ -32,6 +31,7 @@ app.get('/',tokenget, (req, res) => {
   res.send(`Your email: ${req.user.email}`);
   //res.send(`Your password: ${req.user.password}`)
 });
+app.use(routes);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
