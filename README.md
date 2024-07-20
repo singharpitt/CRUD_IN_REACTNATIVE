@@ -7,7 +7,7 @@ A simple React Native application for performing CRUD operations.
 1. Clone the repository:
 
    ```
-  https://github.com/singharpitt/CRUD_IN_REACTNATIVE.git
+   https://github.com/singharpitt/CRUD_IN_REACTNATIVE.git
    ```
 
 2. Install dependencies:
