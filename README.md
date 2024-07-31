@@ -13,7 +13,7 @@ A simple React Native application for performing CRUD operations.
 2. Install dependencies:
 
    ```
-   cd react-native-crud-app
+   cd CRUD_IN_REACTNATIVE
    npm install
    ```
 
